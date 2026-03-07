@@ -1,0 +1,54 @@
+/*
+==============================================================
+Loading Data 
+==============================================================
+Script Purpose:
+	This script loads data into tables 'gold.dim_customers', 'gold.dim_products'
+	and 'gold.fact_sales' from external CSV files. 
+	It performs the following actions:
+	
+	- Truncates the tables before loading data.
+	- Uses the 'BULK INSERT' command to load data from csv Files to the tables.
+
+==============================================================
+*/
+
+PRINT'Trucate Table gold.dim_customers';
+TRUNCATE TABLE  gold.dim_customers;
+PRINT'Inserting Data Into gold.dim_customers';
+BULK INSERT gold.dim_customers
+FROM 'I:\Data Power Project Data Analysis maketing\SalesAnalysis Project\datasets\gold.dim_customers.csv'
+WITH
+	(
+	FIRSTROW = 2,
+	FIELDTERMINATOR = ',',
+	TABLOCK
+	);
+
+PRINT'Trucate Table gold.dim_products';
+TRUNCATE TABLE gold.dim_products;
+PRINT'Inserting Data Into gold.dim_products';
+BULK INSERT gold.dim_products
+FROM 'I:\Data Power Project Data Analysis maketing\SalesAnalysis Project\datasets\gold.dim_products.csv'
+WITH
+	(
+	FIRSTROW = 2,
+	FIELDTERMINATOR =',',
+	TABLOCK
+	);
+
+PRINT'Trucate Table gold.fact_sales';
+TRUNCATE TABLE gold.fact_sales
+PRINT'Inserting Data Into gold.fact_sales';
+BULK INSERT gold.fact_sales
+FROM 'I:\Data Power Project Data Analysis maketing\SalesAnalysis Project\datasets\gold.fact_sales.csv'
+WITH
+	(
+	FIRSTROW = 2,
+	FIELDTERMINATOR =',',
+	TABLOCK
+	);
+
+SELECT * FROM gold.dim_customers;
+SELECT * FROM gold.dim_products;
+SELECT * FROM gold.fact_sales;
