@@ -1,0 +1,91 @@
+/*
+=========================================================================================
+Create Database and Tables
+=========================================================================================
+
+Script Purpose:
+	This script creates a new database named 'SalesAnalysis' after checking if it already 
+	exists. If the database exists, it is dropped and recreated. Additionally, the script 
+	creates  the schema 'gold' and three tables within the database. 
+
+WARNING:
+	Running this script will drop the entire 'SalesAnalysis' database if it exists.
+	All data in the database will be permanently deleted. Proceed with caution
+	and ensure you have proper backups before running this script.
+=========================================================================================
+*/
+
+USE MASTER;
+GO
+
+-- Drop and recreate the database 'SalesAnalysis'
+IF EXISTS (SELECT 1 FROM sys.databases WHERE NAME = 'SalesAnalysis')
+BEGIN
+	ALTER DATABASE SalesAnalysis SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+	DROP DATABASE SalesAnalysis;
+END; 
+
+-- Create database 'SalesAnalysis'
+CREATE DATABASE SalesAnalysis;
+GO
+
+-- Use the database 'SalesAnalysis'
+USE SalesAnalysis;
+GO
+
+-- Create Schema 'gold'
+CREATE SCHEMA gold;
+GO 
+
+-- Create table gold.dim_customers
+IF OBJECT_ID('gold.dim_customers','U') IS NOT NULL 
+	DROP TABLE gold.dim_customers; 
+CREATE TABLE gold.dim_customers
+	(
+	customer_key INT,
+	customer_id INT,
+	customer_number NVARCHAR(50),
+	firstname NVARCHAR(50),
+	lastname NVARCHAR(50),
+	gender NVARCHAR(50),
+	marital_status NVARCHAR(50),
+	country NVARCHAR(50),
+	create_date DATE,
+	birth_date DATE
+	); 
+
+-- Create table gold.dim_products
+IF OBJECT_ID('gold.dim_products','U') IS NOT NULL 
+	DROP TABLE gold.dim_products; 
+CREATE TABLE gold.dim_products
+	(
+	product_key INT,
+	product_id INT,
+	product_number NVARCHAR(50),
+	product_name NVARCHAR(50),
+	category_id NVARCHAR(50),
+	category NVARCHAR(50),
+	subcategory NVARCHAR(50),
+	maintenance NVARCHAR(50),
+	cost INT,
+	product_line NVARCHAR(50),
+	start_date DATE
+	);
+
+-- Create table gold.fact_sales
+IF OBJECT_ID('gold.fact_sales','U') IS NOT NULL 
+	DROP TABLE gold.fact_sales; 
+CREATE TABLE gold.fact_sales
+	(
+	 order_number NVARCHAR(50),
+     product_key INT,
+     customer_id INT,
+     order_date DATE,
+     shipping_date DATE,
+     due_date DATE,
+     quantity INT,
+     price INT,
+     sales_amount INT
+	);
+
+
