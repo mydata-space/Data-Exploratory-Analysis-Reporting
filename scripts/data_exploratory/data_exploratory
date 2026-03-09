@@ -1,9 +1,9 @@
 /*
 ==============================================================
-Data Exploratory
+Data Exploratory 
 ==============================================================
 Script Purpose:
-	This script performs data exploratory of three tables 'gold.dim_customers', 
+	This script performs the data exploratory of three tables 'gold.dim_customers', 
 	'gold.dim_products' and 'gold.fact_sales'. 
 
 	It performs the following actions:
@@ -19,10 +19,12 @@ Script Purpose:
 ==============================================================
 */
 
+
+/*
 -- ------------------------------
 -- Database Exploration
 -- ------------------------------
-
+*/
 -- Explore the table in the schemas
 SELECT * FROM INFORMATION_SCHEMA.TABLES;
 
@@ -33,9 +35,12 @@ WHERE TABLE_NAME = 'fact_sales';
 SELECT * FROM INFORMATION_SCHEMA.COLUMNS 
 WHERE TABLE_NAME = 'dim.customers';
 
+
+/*
 -- ------------------------------
 -- Dimension Exploration 
 -- ------------------------------
+*/
 
 -- Table gold.dim_customers
 SELECT * FROM gold.dim_customers;
@@ -49,9 +54,11 @@ SELECT DISTINCT
 category, subcategory, product_line
 FROM gold.dim_products;
 
+/*
 -- ------------------------------
 -- Date Exploration 
 -- ------------------------------
+*/
 
 -- Table gold.fact_sales
 SELECT * FROM gold.fact_sales;
@@ -90,6 +97,7 @@ DATEDIFF(YEAR,MAX(birthdate),GETDATE()) oldest_customer_age
 FROM gold.dim_customers 
 WHERE YEAR(birthdate) != 2026;
 
+/*
 -- ------------------------------
 -- Measure Exploration 
 -- ------------------------------
@@ -103,9 +111,11 @@ SELECT * FROM gold.dim_products;
 SELECT * FROM gold.fact_sales;
 -- price, quantity, sales_amount, order_number
 
+/*
 -- -------------------------------
 -- Measure Exploration : Questions
 -- -------------------------------
+*/
 -- Find the Total Sales
 SELECT 
 SUM(sales_amount) total_sales
@@ -146,9 +156,11 @@ COUNT(customer_id) customer_id,
 COUNT(DISTINCT customer_id) customer_order -- customer who placed an order
 FROM gold.fact_sales;
 
+/*
 -- ------------------------------
 -- Generate Measure Report
 -- ------------------------------
+*/
 
 SELECT 'total_sales' AS measure_name, SUM(sales_amount) AS measure_value FROM gold.fact_sales
 UNION ALL
@@ -164,9 +176,11 @@ SELECT 'customer_number', COUNT(DISTINCT customer_number) FROM gold.dim_customer
 UNION ALL
 SELECT 'customer_place_order', COUNT(DISTINCT customer_id) FROM gold.fact_sales
 
+/*
 -- ------------------------------
 -- Magnitude Exploration
 -- ------------------------------
+*/
 
 -- Find total customers by countries
 SELECT 
@@ -233,9 +247,11 @@ LEFT JOIN gold.dim_customers c ON s.customer_id = c.customer_id
 GROUP BY c.country
 ORDER BY 2 DESC
 
+/*
 -- ----------------------------------------
 -- Ranking Exploration : Top N and Bottom N
 -- ----------------------------------------
+*/
 
 -- Which 5 products generate the highest revenue?
 SELECT
@@ -260,4 +276,5 @@ FROM gold.fact_sales s
 LEFT JOIN gold.dim_products p ON s.product_key = p.product_key
 GROUP BY p.product_key , p.product_name 
 ORDER BY 2 
+
 
