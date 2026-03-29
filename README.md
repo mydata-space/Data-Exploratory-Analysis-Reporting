@@ -1,0 +1,62 @@
+# 📖 Data Exploratory and Visualization
+Welcome to my Project repository!
+This project demonstrates a comprehensive SQL query manipulation, exploratory question and Power BI viz.
+This project highlights industry best practices in query pereformance, import data and visualization.
+***
+
+## :books: Project Overview 
+This project involves:
+
+1. Import Mode: Import data from SQL Server (gold fact sales, gold dimension customers and gold dimension products).
+2. Data Modeling: Create start schema model and dimension date for time intelligence analysis
+3. Report : create three pages report for sales overview, customers and products. 
+
+## 🎯Project Requirements
+
+Build a report to track the sales performance of the business, the customer and product. The report should be simple and easy to navigate.
+
+1.	Sales main page 
+  Purpose:
+  This report consolidates key sales metric and trends. Questions:
+
+-	Are we growing? How much revenue we generate?
+-	How many orders are happening?
+-	Are we hitting targets?
+-	What the geographical performance?
+-	  
+Highlights:
+		- Total sales vs. target – gauge  
+		- Total orders	
+		- Total quantity 
+- Average order value – KPI card
+- Total sales vs. compare to previous year/month - line chart
+- Sales by country – sales by subcategory of products 
+- Slicer month - 
+
+2.	Customers Report
+  Purpose:
+  This report consolidates key customer metrics and behaviors. Questions:
+-	What are the top customers 
+-	What is the revenue by customer segment
+-	New vs returning customers 
+-	What is the customers geography of the business 
+-	
+
+3.	Products Report
+  Purpose:
+  This report consolidates key products metrics and behaviors. Questions:
+-	What are the top 5 and bottom five products by revenue?
+-	What is the product category performance?
+-	What is the product margin/profit?
+-	What the product sales trend over the year?
+ 
+---
+
+## ✨ About Me 
+
+Hi there! I'm Christ GHABAKO, I'm a business analyst and MBA.
+My responsability is to help businesses to process, analyze and consume data efficiently and effectively. 
+ 
+*A credit to Baraa Salkini for the inspiration in this work.* 
+
+
