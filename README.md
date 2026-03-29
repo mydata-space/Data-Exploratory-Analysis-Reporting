@@ -23,7 +23,7 @@ Build a report to track the sales performance of the business, the customer and 
 -	How many orders are happening?
 -	Are we hitting targets?
 -	What the geographical performance?
--	  
+    
 Highlights:
 		- Total sales vs. target – gauge  
 		- Total orders	
@@ -40,7 +40,6 @@ Highlights:
 -	What is the revenue by customer segment
 -	New vs returning customers 
 -	What is the customers geography of the business 
--	
 
 3.	Products Report
   Purpose:
