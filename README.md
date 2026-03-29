@@ -51,6 +51,12 @@ Highlights:
  
 ---
 
+## Viz 
+
+<img width="642" height="770" alt="First page" src="https://github.com/user-attachments/assets/58262cce-c3d1-4ea1-8dcf-b13b6f176722" />
+<img width="645" height="777" alt="Second page" src="https://github.com/user-attachments/assets/3d5436d4-7e46-4c6b-aa14-1ac62dff8c67" />
+<img width="645" height="772" alt="Thrid page" src="https://github.com/user-attachments/assets/d5e2cab8-86a7-497b-9176-d81e862cac34" />
+
 ## ✨ About Me 
 
 Hi there! I'm Christ GHABAKO, I'm a business analyst and MBA.
