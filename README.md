@@ -1,4 +1,4 @@
-# 📖 Data Exploratory and Visualization
+# 📖 SQL Data Exploratory and Power BI Visualization
 Welcome to my Project repository!
 This project demonstrates a comprehensive SQL query manipulation, exploratory question and Power BI viz.
 This project highlights industry best practices in query pereformance, import data and visualization.
