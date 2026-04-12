@@ -51,7 +51,7 @@ Highlights:
  
 ---
 
-## Viz 
+## Data Viz 
 
 <img width="642" height="770" alt="First page" src="https://github.com/user-attachments/assets/58262cce-c3d1-4ea1-8dcf-b13b6f176722" />
 <img width="645" height="777" alt="Second page" src="https://github.com/user-attachments/assets/3d5436d4-7e46-4c6b-aa14-1ac62dff8c67" />
