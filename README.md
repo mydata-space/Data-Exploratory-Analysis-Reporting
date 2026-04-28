@@ -59,7 +59,7 @@ Highlights:
 
 ## ✨ About Me 
 
-Hi there! I'm Christ GHABAKO, I'm an MBA of business analytic and entreprise information systems.
+Hi there! I'm GHABAKO, data freelance and information system specialist and a graduate of an MBA in business analytics and information systems.
 My responsability is to help businesses to process, analyze and consume data efficiently and effectively. 
 
 
